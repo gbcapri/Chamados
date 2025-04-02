@@ -16,6 +16,7 @@ class ChamadoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'nome' => 'required|string',
             'titulo' => 'required|string',
             'categoria_id' => 'required|exists:categorias,id',
             'descricao' => 'required|string',
@@ -23,6 +24,7 @@ class ChamadoController extends Controller
         ]);
 
         $chamado = Chamado::create([
+            'nome' => $request->nome,
             'titulo' => $request->titulo,
             'categoria_id' => $request->categoria_id,
             'descricao' => $request->descricao,
@@ -33,6 +35,12 @@ class ChamadoController extends Controller
         ]);
 
         return response()->json($chamado, 201);
+    }
+
+
+    public function show($id)
+    {
+        return response()->json(Chamado::findOrFail($id));
     }
 
     public function update(Request $request, $id)
