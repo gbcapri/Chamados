@@ -1,4 +1,5 @@
 <?php
+dd('Arquivo api.php está sendo carregado!');
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;

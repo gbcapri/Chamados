@@ -10,7 +10,7 @@ class ChamadoController extends Controller
 {
     public function index()
     {
-        return response()->json(Chamado::all(), 200);
+        return response()->json(['message' => 'ChamadoController funcionando!']);
     }
 
     public function store(Request $request)
