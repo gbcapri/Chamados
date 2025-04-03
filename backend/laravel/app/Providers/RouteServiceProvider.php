@@ -7,14 +7,8 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    /**
-     * Define os caminhos padrão da aplicação.
-     */
     public const HOME = '/home';
 
-    /**
-     * Registre os serviços da aplicação.
-     */
     public function boot(): void
     {
         $this->routes(function () {
